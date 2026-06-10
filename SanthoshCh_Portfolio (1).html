@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santhosh Chennoji — Senior Data Engineer</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a0f1e;
+  --navy2:#0d1426;
+  --card:#111827;
+  --card2:#1a2236;
+  --border:rgba(99,179,237,0.15);
+  --border2:rgba(99,179,237,0.3);
+  --text:#e2e8f0;
+  --text2:#94a3b8;
+  --text3:#64748b;
+  --blue:#63b3ed;
+  --blue2:#4299e2;
+  --teal:#4fd1c5;
+  --purple:#b794f4;
+  --green:#68d391;
+  --amber:#fbd38d;
+  --coral:#fc8181;
+  --pink:#f687b3;
+  --font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--navy);color:var(--text);line-height:1.6}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,15,30,0.95);backdrop-filter:blur(10px);z-index:100}
+.nav-logo{font-size:18px;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{font-size:13px;color:var(--text2);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-badge{font-size:11px;padding:3px 10px;border-radius:100px;background:rgba(72,187,120,0.15);color:#68d391;border:1px solid rgba(72,187,120,0.3)}
+
+/* HERO */
+.hero{padding:5rem 2.5rem 4rem;max-width:900px;margin:0 auto;text-align:center;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse at center,rgba(66,153,225,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-tag{display:inline-block;font-size:12px;color:var(--blue);border:1px solid var(--border2);border-radius:100px;padding:4px 14px;margin-bottom:1.5rem;letter-spacing:0.05em}
+.hero h1{font-size:48px;font-weight:700;line-height:1.15;margin-bottom:1rem}
+.hero h1 span{background:linear-gradient(135deg,var(--blue),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:17px;color:var(--text2);line-height:1.8;max-width:650px;margin:0 auto 2rem}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-glow{background:linear-gradient(135deg,var(--blue2),var(--teal));color:#fff;border:none;padding:11px 24px;border-radius:8px;font-size:14px;cursor:pointer;font-family:var(--font);text-decoration:none;display:inline-block;font-weight:500;box-shadow:0 0 20px rgba(66,153,225,0.3)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border2);padding:11px 24px;border-radius:8px;font-size:14px;cursor:pointer;font-family:var(--font);text-decoration:none;display:inline-block}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:3rem 0}
+.stat-card{background:var(--card);padding:1.5rem;text-align:center}
+.stat-num{font-size:30px;font-weight:700;background:linear-gradient(135deg,var(--blue),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{font-size:12px;color:var(--text3);margin-top:4px}
+
+/* SECTION */
+.section{padding:4rem 2.5rem;max-width:900px;margin:0 auto}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:2rem}
+.section-line{flex:1;height:1px;background:var(--border)}
+.section-title{font-size:14px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:border-color 0.2s,transform 0.2s}
+.project-card:hover{border-color:var(--border2);transform:translateY(-2px)}
+.project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.project-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.project-company-badge{font-size:11px;padding:2px 8px;border-radius:100px;color:var(--text3);border:1px solid var(--border)}
+.project-title{font-size:15px;font-weight:600;margin-bottom:4px;color:var(--text)}
+.project-period{font-size:11px;color:var(--text3);margin-bottom:8px}
+.project-desc{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:12px}
+.project-metric{font-size:12px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.project-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;padding:3px 8px;border-radius:100px;background:rgba(99,179,237,0.1);color:var(--blue);border:1px solid rgba(99,179,237,0.2)}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.timeline-item{display:flex;gap:1.25rem;padding-bottom:2rem;position:relative}
+.timeline-item::before{content:'';position:absolute;left:15px;top:34px;bottom:0;width:1px;background:var(--border)}
+.timeline-item:last-child::before{display:none}
+.timeline-dot{width:32px;height:32px;border-radius:50%;border:1px solid var(--border2);background:var(--card);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:14px}
+.timeline-content{flex:1;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem}
+.timeline-role{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px}
+.timeline-company{font-size:13px;color:var(--blue);margin-bottom:2px}
+.timeline-period{font-size:11px;color:var(--text3);margin-bottom:10px}
+.timeline-detail{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:10px}
+.timeline-tags{display:flex;flex-wrap:wrap;gap:5px}
+.ttag{font-size:11px;padding:2px 8px;border-radius:100px;background:rgba(99,179,237,0.08);color:var(--text3);border:1px solid var(--border)}
+
+/* SKILLS */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr}}
+.skills-list{display:flex;flex-direction:column;gap:16px}
+.skill-group-title{font-size:12px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.skill-pills{display:flex;flex-wrap:wrap;gap:6px}
+.skill-pill{font-size:12px;padding:4px 10px;border-radius:6px;background:var(--card2);color:var(--text2);border:1px solid var(--border)}
+
+/* CERTS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1rem;display:flex;gap:12px;align-items:center;transition:border-color 0.2s}
+.cert-card:hover{border-color:var(--border2)}
+.cert-icon{font-size:22px;flex-shrink:0}
+.cert-name{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
+.cert-issuer{font-size:12px;color:var(--text3)}
+.cert-badge{font-size:10px;padding:2px 7px;border-radius:100px;background:rgba(72,187,120,0.15);color:#68d391;border:1px solid rgba(72,187,120,0.3);margin-top:4px;display:inline-block}
+
+/* CONTACT */
+.contact-section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2.5rem;text-align:center}
+.contact-title{font-size:24px;font-weight:600;margin-bottom:0.75rem}
+.contact-sub{font-size:15px;color:var(--text2);margin-bottom:2rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:2rem}
+.contact-link{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text2);text-decoration:none;padding:8px 16px;border:1px solid var(--border);border-radius:8px;transition:all 0.2s}
+.contact-link:hover{border-color:var(--blue);color:var(--blue)}
+
+.divider{border:none;border-top:1px solid var(--border);margin:0 2.5rem}
+.footer{padding:1.5rem;text-align:center;font-size:12px;color:var(--text3)}
+
+/* Color accents */
+.c-blue{color:var(--blue)}
+.c-teal{color:var(--teal)}
+.c-purple{color:var(--purple)}
+.c-green{color:var(--green)}
+.c-amber{color:var(--amber)}
+.c-coral{color:var(--coral)}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">SC.</span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <span class="nav-badge">Available Now</span>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag"><i class="ti ti-map-pin" style="font-size:12px"></i> Dallas, TX &nbsp;&middot;&nbsp; Available Now</div>
+  <h1>Santhosh Chennoji<br><span>Senior Data Engineer</span></h1>
+  <p class="hero-sub">5+ years designing enterprise ETL/ELT pipelines, Medallion Architecture (Bronze/Silver/Gold), and cloud data platforms on Azure, Databricks, Snowflake, Microsoft Fabric, and AWS. Reduced dashboard latency 45%, compute costs 28%, and OLAP query times 40%.</p>
+  <div class="hero-cta">
+    <a href="mailto:Santhoshp8773@gmail.com" class="btn-glow">Get in touch</a>
+    <a href="https://www.linkedin.com/in/santhosho/" target="_blank" class="btn-outline">LinkedIn &rarr;</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div style="max-width:900px;margin:0 auto;padding:0 2.5rem">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Years Experience</div></div>
+    <div class="stat-card"><div class="stat-num">50M+</div><div class="stat-label">Records/Day at Truist</div></div>
+    <div class="stat-card"><div class="stat-num">45%</div><div class="stat-label">Dashboard Latency Cut</div></div>
+    <div class="stat-card"><div class="stat-num">28%</div><div class="stat-label">Compute Cost Saved</div></div>
+    <div class="stat-card"><div class="stat-num">55%</div><div class="stat-label">Pipeline Throughput Gain</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="section-header">
+    <span class="section-title">About Me</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p style="font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:1rem">I'm a <strong style="color:var(--text)">Senior Data Engineer</strong> with a Master of Science in Computer and Information Science from Texas A&M University. I specialize in building enterprise-scale data platforms that combine modern cloud infrastructure with robust data governance.</p>
+      <p style="font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:1rem">At <strong style="color:var(--blue)">Truist Bank</strong>, I lead the implementation of Medallion Architecture on Microsoft Fabric and Databricks, processing 50M+ daily financial records. I'm currently leading an Informatica to Talend ETL migration initiative with Snowflake as the cloud data warehouse.</p>
+      <p style="font-size:15px;color:var(--text2);line-height:1.8">My stack centers on <strong style="color:var(--teal)">Azure, Databricks, Snowflake, dbt, and AWS</strong> — with a strong focus on data governance, Unity Catalog, Azure Purview, and CI/CD delivery via Azure DevOps.</p>
+    </div>
+    <div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem">
+        <div style="font-size:12px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem">Quick Facts</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-map-pin c-blue" style="font-size:15px"></i><span style="font-size:13px;color:var(--text2)">Dallas, TX</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-building-bank c-blue" style="font-size:15px"></i><span style="font-size:13px;color:var(--text2)">Currently at Truist Bank</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-school c-teal" style="font-size:15px"></i><span style="font-size:13px;color:var(--text2)">MS Computer Science — Texas A&M</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-certificate c-amber" style="font-size:15px"></i><span style="font-size:13px;color:var(--text2)">SnowPro Core &middot; AWS Certified</span></div>
+          <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-mail c-purple" style="font-size:15px"></i><a href="mailto:Santhoshp8773@gmail.com" style="font-size:13px;color:var(--text2);text-decoration:none">Santhoshp8773@gmail.com</a></div>
+          <div style="display:flex;gap:10px;align-items:center"><i class="ti ti-phone c-green" style="font-size:15px"></i><span style="font-size:13px;color:var(--text2)">+1 682-587-7237</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- EXPERIENCE -->
+<div class="section" id="experience">
+  <div class="section-header">
+    <span class="section-title">Work Experience</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="ti ti-building-bank" style="color:var(--blue);font-size:14px"></i></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Data Engineer</div>
+        <div class="timeline-company">Truist Bank &middot; Dallas, TX</div>
+        <div class="timeline-period">Jan 2024 &ndash; Present</div>
+        <div class="timeline-detail">Implemented Medallion Architecture (Bronze/Silver/Gold Delta Lake) on Microsoft Fabric and Databricks with OneLake as the unified storage layer. Designed enterprise ETL/ELT pipelines via ADF and PySpark processing 50M+ daily records. Configured Azure Purview and Databricks Unity Catalog for governance and lineage. Reduced dashboard latency 45%, compute spend 28%, and OLAP query times 40%. Leading Informatica to Talend ETL migration with Snowflake as cloud data warehouse.</div>
+        <div class="timeline-tags">
+          <span class="ttag">Databricks</span><span class="ttag">Microsoft Fabric</span><span class="ttag">OneLake</span><span class="ttag">Delta Lake</span><span class="ttag">Unity Catalog</span><span class="ttag">ADF</span><span class="ttag">ADLS Gen2</span><span class="ttag">Snowflake</span><span class="ttag">Azure Purview</span><span class="ttag">PySpark</span><span class="ttag">Airflow</span><span class="ttag">CI/CD</span><span class="ttag">Talend</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="ti ti-medical-cross" style="color:var(--teal);font-size:14px"></i></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Data Analyst</div>
+        <div class="timeline-company">UnitedHealth Group &middot; Remote</div>
+        <div class="timeline-period">Jan 2024 &ndash; Sep 2024</div>
+        <div class="timeline-detail">Built AWS cloud data platform with ETL/ELT pipelines using AWS Glue, S3, Redshift, and dbt. Designed star schema dimensional models with SCD Type 1 and 2 via dbt snapshots. Implemented watermark-based incremental ETL for 20M+ HIPAA-regulated Medicaid and Medicare records with PII masking and RBAC. Delivered Power BI Semantic Models for clinical and operational leadership.</div>
+        <div class="timeline-tags">
+          <span class="ttag">dbt</span><span class="ttag">AWS Glue</span><span class="ttag">S3</span><span class="ttag">Redshift</span><span class="ttag">Star Schema</span><span class="ttag">SCD Type 2</span><span class="ttag">Snowflake</span><span class="ttag">HIPAA</span><span class="ttag">PII Masking</span><span class="ttag">Power BI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="ti ti-flask" style="color:var(--purple);font-size:14px"></i></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Software Engineer</div>
+        <div class="timeline-company">Pfizer &middot; Remote</div>
+        <div class="timeline-period">Mar 2022 &ndash; Dec 2023</div>
+        <div class="timeline-detail">Improved pipeline throughput 55% through PySpark optimization, dbt incremental model redesign, and Kubernetes ML containerization. Implemented Medallion Architecture and Delta Lake on Databricks. Built RAG pipelines with LangChain and vector databases. Cross-cloud analytics on AWS, Azure, and GCP. Terraform IaC and Azure DevOps CI/CD.</div>
+        <div class="timeline-tags">
+          <span class="ttag">Databricks</span><span class="ttag">PySpark</span><span class="ttag">dbt</span><span class="ttag">Delta Lake</span><span class="ttag">AWS</span><span class="ttag">GCP BigQuery</span><span class="ttag">Terraform</span><span class="ttag">Kubernetes</span><span class="ttag">LangChain</span><span class="ttag">RAG</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"><i class="ti ti-code" style="color:var(--amber);font-size:14px"></i></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Software Developer (Intern)</div>
+        <div class="timeline-company">Hexaware Technologies &middot; Hyderabad, India</div>
+        <div class="timeline-period">May 2020 &ndash; Dec 2021</div>
+        <div class="timeline-detail">Built ADF ETL/ELT pipelines with Delta Lake on Databricks. Designed star and snowflake schemas in Snowflake and Azure SQL with dbt. Applied Kafka streaming, Docker containerization, and Airflow orchestration. CI/CD via Azure DevOps and Git.</div>
+        <div class="timeline-tags">
+          <span class="ttag">ADF</span><span class="ttag">Databricks</span><span class="ttag">Delta Lake</span><span class="ttag">dbt</span><span class="ttag">Snowflake</span><span class="ttag">Kafka</span><span class="ttag">Docker</span><span class="ttag">Airflow</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="section-header">
+    <span class="section-title">Featured Projects</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon" style="background:rgba(99,179,237,0.12)"><i class="ti ti-layers-difference c-blue"></i></div>
+        <span class="project-company-badge">Truist Bank</span>
+      </div>
+      <div class="project-title">Medallion Architecture — Delta Lake</div>
+      <div class="project-period">Jan 2024 - Present</div>
+      <div class="project-desc">Bronze/Silver/Gold Delta Lake layers on Microsoft Fabric and Databricks using OneLake as the unified storage layer. Standardized ingestion, transformation, and consumption across the enterprise financial data platform.</div>
+      <div class="project-metric c-blue"><i class="ti ti-trending-down"></i> 45% latency &middot; 28% compute savings</div>
+      <div class="project-tags"><span class="tag">Databricks</span><span class="tag">MS Fabric</span><span class="tag">OneLake</span><span class="tag">Delta Lake</span><span class="tag">Unity Catalog</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon" style="background:rgba(79,209,197,0.12)"><i class="ti ti-database-export c-teal"></i></div>
+        <span class="project-company-badge">Truist Bank</span>
+      </div>
+      <div class="project-title">Enterprise ETL/ELT Pipelines</div>
+      <div class="project-period">Jan 2024 - Present</div>
+      <div class="project-desc">ADF and Databricks PySpark pipelines ingesting relational, mainframe, API, and flat-file sources into ADLS Gen2 and Snowflake. Airflow DAGs with self-healing callbacks eliminating manual pipeline intervention.</div>
+      <div class="project-metric c-teal"><i class="ti ti-bolt"></i> 50M+ records/day &middot; 40% OLAP improvement</div>
+      <div class="project-tags"><span class="tag">ADF</span><span class="tag">ADLS Gen2</span><span class="tag">Snowflake</span><span class="tag">PySpark</span><span class="tag">Airflow</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon" style="background:rgba(183,148,244,0.12)"><i class="ti ti-shield-check c-purple"></i></div>
+        <span class="project-company-badge">Truist Bank</span>
+      </div>
+      <div class="project-title">Data Governance Platform</div>
+      <div class="project-period">Jan 2024 - Present</div>
+      <div class="project-desc">Microsoft Fabric Catalog and Azure Purview for metadata management and data lineage tracking across Azure Data Lake, Databricks, and Snowflake. Databricks Unity Catalog and Azure RBAC governing sensitive financial datasets.</div>
+      <div class="project-metric c-purple"><i class="ti ti-lock"></i> Enterprise lineage &middot; RBAC across all datasets</div>
+      <div class="project-tags"><span class="tag">Azure Purview</span><span class="tag">Unity Catalog</span><span class="tag">Fabric Catalog</span><span class="tag">RBAC</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon" style="background:rgba(251,211,141,0.12)"><i class="ti ti-git-branch c-amber"></i></div>
+        <span class="project-company-badge">UnitedHealth Group</span>
+      </div>
+      <div class="project-title">dbt AWS Healthcare Platform</div>
+      <div class="project-period">Jan 2024 - Sep 2024</div>
+      <div class="project-desc">AWS cloud data platform with dbt and Redshift. Star schema models with SCD Type 1 and 2 via dbt snapshots. Watermark-based incremental ETL from healthcare sources. HIPAA-compliant PII masking and RBAC for 20M+ Medicaid/Medicare records.</div>
+      <div class="project-metric c-amber"><i class="ti ti-file-check"></i> 20M+ regulated records &middot; HIPAA compliant</div>
+      <div class="project-tags"><span class="tag">dbt</span><span class="tag">AWS Glue</span><span class="tag">Redshift</span><span class="tag">Star Schema</span><span class="tag">SCD Type 2</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon" style="background:rgba(252,129,129,0.12)"><i class="ti ti-arrows-transfer-up c-coral"></i></div>
+        <span class="project-company-badge">Truist Bank</span>
+      </div>
+      <div class="project-title">Informatica to Talend Migration</div>
+      <div class="project-period">Jan 2024 - Present</div>
+      <div class="project-desc">Large-scale ETL migration from Informatica PowerCenter to Talend, transitioning financial data into Snowflake as the cloud data warehouse. Source-to-target mappings, transformation summaries, and migration inventories across databases, SaaS apps, and flat files.</div>
+      <div class="project-metric c-coral"><i class="ti ti-transfer"></i> Full Informatica to Talend migration</div>
+      <div class="project-tags"><span class="tag">Talend</span><span class="tag">Informatica</span><span class="tag">Snowflake</span><span class="tag">Migration</span></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-top">
+        <div class="project-icon" style="background:rgba(104,211,145,0.12)"><i class="ti ti-bolt c-green"></i></div>
+        <span class="project-company-badge">Pfizer</span>
+      </div>
+      <div class="project-title">Pipeline Optimization + RAG</div>
+      <div class="project-period">Mar 2022 - Dec 2023</div>
+      <div class="project-desc">55% throughput improvement through PySpark optimization and dbt incremental model redesign. Kubernetes ML containerization, Terraform IaC, RAG pipelines with LangChain and vector databases. Cross-cloud analytics on AWS, Azure, and GCP BigQuery.</div>
+      <div class="project-metric c-green"><i class="ti ti-trending-up"></i> 55% pipeline throughput gain</div>
+      <div class="project-tags"><span class="tag">PySpark</span><span class="tag">dbt</span><span class="tag">Kubernetes</span><span class="tag">Terraform</span><span class="tag">LangChain</span></div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<div class="section" id="skills">
+  <div class="section-header">
+    <span class="section-title">Skills & Technologies</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-list">
+
+    <div>
+      <div class="skill-group-title">Azure and Microsoft Fabric</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Azure Data Factory</span><span class="skill-pill">ADLS Gen2</span><span class="skill-pill">Azure Synapse</span><span class="skill-pill">Azure SQL</span><span class="skill-pill">Azure DevOps</span><span class="skill-pill">Azure Purview</span><span class="skill-pill">Azure RBAC</span><span class="skill-pill">Microsoft Fabric</span><span class="skill-pill">OneLake</span><span class="skill-pill">Fabric Data Factory</span><span class="skill-pill">Fabric Catalog</span><span class="skill-pill">DirectLake</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="skill-group-title">Databricks</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Databricks</span><span class="skill-pill">Medallion Architecture</span><span class="skill-pill">Delta Lake</span><span class="skill-pill">Unity Catalog</span><span class="skill-pill">Databricks Jobs</span><span class="skill-pill">Asset Bundles</span><span class="skill-pill">PySpark</span><span class="skill-pill">Spark SQL</span><span class="skill-pill">ACID Transactions</span><span class="skill-pill">Schema Evolution</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="skill-group-title">Snowflake and dbt</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Snowflake (SnowPro Certified)</span><span class="skill-pill">dbt Core</span><span class="skill-pill">dbt Cloud</span><span class="skill-pill">Star Schema</span><span class="skill-pill">SCD Type 1 and 2</span><span class="skill-pill">dbt Snapshots</span><span class="skill-pill">Incremental Models</span><span class="skill-pill">Surrogate Keys</span><span class="skill-pill">Fact Tables</span><span class="skill-pill">Conformed Dimensions</span><span class="skill-pill">Power BI Semantic Models</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="skill-group-title">AWS and Cloud</div>
+      <div class="skill-pills">
+        <span class="skill-pill">AWS Glue</span><span class="skill-pill">S3</span><span class="skill-pill">Redshift</span><span class="skill-pill">EMR</span><span class="skill-pill">Lambda</span><span class="skill-pill">Kinesis</span><span class="skill-pill">Firehose</span><span class="skill-pill">Athena</span><span class="skill-pill">IAM</span><span class="skill-pill">CloudWatch</span><span class="skill-pill">GCP BigQuery</span><span class="skill-pill">Dataproc</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="skill-group-title">Programming and ETL</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Python</span><span class="skill-pill">SQL</span><span class="skill-pill">T-SQL</span><span class="skill-pill">Spark SQL</span><span class="skill-pill">Scala</span><span class="skill-pill">Shell Scripting</span><span class="skill-pill">Apache Airflow</span><span class="skill-pill">Informatica</span><span class="skill-pill">Talend</span><span class="skill-pill">Fivetran</span><span class="skill-pill">Watermark ETL</span><span class="skill-pill">CDC</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="skill-group-title">DevOps, Governance and AI</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span><span class="skill-pill">Terraform</span><span class="skill-pill">CI/CD</span><span class="skill-pill">Git</span><span class="skill-pill">JIRA</span><span class="skill-pill">Power BI</span><span class="skill-pill">Tableau</span><span class="skill-pill">LangChain</span><span class="skill-pill">RAG Pipelines</span><span class="skill-pill">FAISS</span><span class="skill-pill">Pinecone</span><span class="skill-pill">Amazon Bedrock</span>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <div class="section-header" style="margin-top:2rem">
+    <span class="section-title">Certifications</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-icon"><i class="ti ti-snowflake" style="color:#29B5E8"></i></div>
+      <div><div class="cert-name">SnowPro Core Certification</div><div class="cert-issuer">Snowflake</div><span class="cert-badge">&#10003; Earned</span></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="ti ti-cloud" style="color:#FF9900"></i></div>
+      <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><span class="cert-badge">&#10003; Earned</span></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="ti ti-database-import" style="color:#FF6D00"></i></div>
+      <div><div class="cert-name">Talend Data Integration</div><div class="cert-issuer">Talend</div><span class="cert-badge">&#10003; Earned</span></div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon"><i class="ti ti-shield-check" style="color:#5C6BC0"></i></div>
+      <div><div class="cert-name">Ataccama ONE v15</div><div class="cert-issuer">Ataccama</div><span class="cert-badge">&#10003; Earned</span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<div class="section" id="contact">
+  <div class="section-header">
+    <span class="section-title">Get In Touch</span>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-section">
+    <h2 class="contact-title">Let's Connect</h2>
+    <p class="contact-sub">I'm open to new Data Engineer opportunities. Whether you have a question, a project, or just want to say hi — feel free to reach out.</p>
+    <div class="contact-links">
+      <a href="mailto:Santhoshp8773@gmail.com" class="contact-link"><i class="ti ti-mail" style="font-size:15px"></i> Santhoshp8773@gmail.com</a>
+      <a href="tel:+16825877237" class="contact-link"><i class="ti ti-phone" style="font-size:15px"></i> +1 682-587-7237</a>
+      <a href="https://www.linkedin.com/in/santhosho/" target="_blank" class="contact-link"><i class="ti ti-brand-linkedin" style="font-size:15px"></i> linkedin.com/in/santhosho/</a>
+    </div>
+    <a href="mailto:Santhoshp8773@gmail.com" class="btn-glow">Send Email &rarr;</a>
+  </div>
+</div>
+
+<div class="footer">Designed &amp; built by Santhosh Chennoji &middot; Senior Data Engineer &middot; Dallas, TX &middot; 2025</div>
+
+</body>
+</html>
